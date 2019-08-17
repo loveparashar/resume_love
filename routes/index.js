@@ -8,4 +8,7 @@ console.log('router loaded');
 router.get('/',homeController.home);
 router.get('/action',homeController.action);
 router.get('/action/scores',homeController.score);
+router.use('/users',require('./users'));
+// for any further routes,access from here
+// router.use('/routername',require('./routerfile));
 module.exports=router;
