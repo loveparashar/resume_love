@@ -18,19 +18,19 @@ module.exports.create=function(req,res){
      if(req.body.password!=req.body.confirm_password)
            return res.redirect('back');
     User.findOne({email: req.body.email},function(err,user){
-          if(err){
-              console.log("err",err);
-          }
+          if(err){ 
+             console.log("err",err); 
+          }     
           if(!user){
               User.create(req.body, function(err,user){
                   if(err){console.log('error in signup',err)};
+                  console.log(req.body);
                   return res.redirect('/signin');
               });
-            }
-        
+            }   
           else{
-              return res.redirect('back');
-          }
+              return res.redirect('back'); 
+             } 
     });
 }
   module.exports.createSession=function(req,res){
