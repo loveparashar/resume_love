@@ -1,11 +1,22 @@
 const User=require('../models/signup');
 module.exports.signup=function(req,res){
+    if(req.isAuthenticated()){
+        return res.redirect('/');
+    }
    // return res.end('<h1>Express is up for codeial</h1>');
    return res.render('signup',{
        title:'sign up'
    });
 }
+module.exports.home=function(req,res){
+    return res.render('home',{
+        title:'home'
+    });
+}
 module.exports.signin=function(req,res){
+    if(req.isAuthenticated()){
+      return  res.redirect('/');
+    }
     return res.render('signin',{
         title:'signin'
     });
@@ -34,6 +45,6 @@ module.exports.create=function(req,res){
     });
 }
   module.exports.createSession=function(req,res){
-      //TODO later
+      return res.redirect('/');
      
 }

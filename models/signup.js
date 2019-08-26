@@ -9,7 +9,13 @@ const signSchema=new mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    name:{
+        type:String,
+        required:true
     }
+}, {
+    timestamps:true
 });
 const Signup=mongoose.model('Signup',signSchema);
 module.exports=Signup;
