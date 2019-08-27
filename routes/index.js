@@ -15,6 +15,7 @@ router.post('/createsession',passport.authenticate(
     'local',
     {failureRedirect:'/signin'},
 ),homeController.createSession);
+router.get('/signout',homeController.destroySession);
 router.use('/users',require('./users'));
 // for any further routes,access from here
 // router.use('/routername',require('./routerfile));

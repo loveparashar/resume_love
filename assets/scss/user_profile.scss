@@ -1,0 +1,39 @@
+body{
+    background: lightblue;
+    margin: 0px;
+}
+.sign-up{
+    margin-left:180px;
+    margin-top: 40px;
+    width: 26rem;
+    height: 25rem;
+    background: lightpink;
+}
+.write{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: aliceblue;
+    margin-top: 10px;
+}
+.write p{
+    color: aliceblue;
+}
+input{
+    padding: 5px;
+    width: 20rem;
+    height: 55px;
+    background: whitesmoke;
+    display: block;
+    margin-left: 40px;
+    margin-top: 50px;
+    margin-bottom: 35px;
+    margin-top: 20px;
+    border-radius: 0.2rem;
+}
+button{
+    width: 150px;
+    height:50px;
+    background: black;
+    color: white;
+}
