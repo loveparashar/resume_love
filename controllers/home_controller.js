@@ -1,4 +1,5 @@
 const User=require('../models/signup');
+const post=require('../models/post');
 module.exports.signup=function(req,res){
     if(req.isAuthenticated()){
         return res.redirect('/');
@@ -9,9 +10,20 @@ module.exports.signup=function(req,res){
    });
 }
 module.exports.home=function(req,res){
-    return res.render('home',{
-        title:'home'
-    });
+ /*  post.find({},function(err,posts){
+        return res.render('home',{
+           title:'codieal | Home',
+           posts:posts
+       });
+    });*/
+  //populate user of each post
+    post.find({}).populate('user').exec(function(err, posts){
+             return res.render('home', {
+                 title:'codieal | Home',
+                 posts: posts
+               });
+       });
+
 }
 module.exports.signin=function(req,res){
     if(req.isAuthenticated()){

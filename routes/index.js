@@ -5,7 +5,7 @@ const passport=require('passport');
 const homeController=require('../controllers/home_controller');
 console.log('router loaded');
 
-
+router.use('/posts',require('./posts'));
 router.get('/',passport.checkAuthentication,homeController.home);
 router.get('/signup',homeController.signup);
 router.get('/signin',homeController.signin);

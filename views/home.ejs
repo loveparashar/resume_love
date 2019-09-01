@@ -1,12 +1,29 @@
 <link rel="stylesheet" href="/css/user_profile.css">
-       <h1>codeial / <%= title%></h1>
+       <h1><%= title%></h1>
        <p><%= user.name %></p>
        <p><%= user.email %></p>
 
 <section id="feed-posts">
        <h4>Posts</h4>
-       <form action="" id="new-post-form" method="POST">
-           <textarea name="content"  cols="30" rows="3"></textarea>
-           <input type="submit" value="Post">
+    <% if(locals.user){%>
+       <form action="/posts/create" id="new-post-form" method="POST">
+              <img src="" alt="">
+           <textarea name="content"  cols="30" rows="3" placeholder="Type Here...."></textarea><br>
+           <button type="submit">Post</button>
        </form>
+     <% } %>
+       <div id="posts-list-container">
+              <ul>
+                     <%for(post of posts){%>
+                     
+                        <li>
+                               <%= post.content%>
+                               <small>
+                                      <%= post.user %>
+                               </small>
+                        </li>
+                      
+                     <%}%>
+              </ul>
+       </div>
 </section>

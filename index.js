@@ -18,8 +18,6 @@ app.use(sassMiddleware({
     prefix: '/css'
 
 }));
-
-
 // to use parser middlewares to take the form data
 app.use(express.urlencoded());
 app.use(expressLayouts);
